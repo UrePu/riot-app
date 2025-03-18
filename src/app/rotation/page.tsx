@@ -20,7 +20,6 @@ const RotationPage = () => {
     ],
   });
 
-  // 배열의 각 항목은 해당 쿼리의 결과를 담고 있습니다.
   const [
     { isLoading: rotationLoading, isError: rotationError, data: rotationData },
     {
@@ -33,7 +32,6 @@ const RotationPage = () => {
   if (rotationLoading || allChampionsLoading) return <Loading />;
   if (rotationError || allChampionsError) return <div>Error...</div>;
 
-  // 이후 rotationData와 allChampionsData를 활용할 수 있습니다.
   const rotationChampions: ChampionType[] = allChampionsData.filter(
     (champ: ChampionType) =>
       rotationData.freeChampionIds.includes(Number(champ.key))

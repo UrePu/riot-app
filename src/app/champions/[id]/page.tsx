@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-
 import { ChampionType } from "@/types/champion";
 import { fetchChampion } from "@/utils/serverApi";
 
@@ -23,22 +22,32 @@ const ChampionDetailPage = async ({
     blurb,
     info,
   }: ChampionDetail = champion.data[championKey];
-  return (
-    <div>
-      <Image
-        src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championId}.png`}
-        alt="champion"
-        width={200}
-        height={200}
-      />
-      <h1>{name}</h1>
-      <p>{blurb}</p>
 
-      <ul>
-        <li>공격력: {info.attack}</li>
-        <li>방어력: {info.defense}</li>
-        <li>마법: {info.magic}</li>
-        <li>난이도: {info.difficulty}</li>
+  return (
+    <div className="max-w-lg mx-auto my-10 p-6 rounded-lg shadow-lg">
+      <div className="flex justify-center mb-6">
+        <Image
+          src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championId}.png`}
+          alt="champion"
+          width={200}
+          height={200}
+        />
+      </div>
+      <h1 className="text-3xl font-bold text-center mb-4">{name}</h1>
+      <p className="text-center text-gray-600 mb-6">{blurb}</p>
+      <ul className="space-y-4">
+        <li className="p-3 border border-gray-200 rounded-md">
+          공격력: {info.attack}
+        </li>
+        <li className="p-3 border border-gray-200 rounded-md">
+          방어력: {info.defense}
+        </li>
+        <li className="p-3 border border-gray-200 rounded-md">
+          마법: {info.magic}
+        </li>
+        <li className="p-3 border border-gray-200 rounded-md">
+          난이도: {info.difficulty}
+        </li>
       </ul>
     </div>
   );

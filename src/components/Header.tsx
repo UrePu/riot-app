@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-header flex justify-between text-center h-12 items-center mb-4 text-white">
+    <div className="bg-layout flex justify-between text-center h-12 items-center mb-4 text-white">
       <div className="flex flex-1">
         <Link
           className="w-full h-full flex justify-center items-center"

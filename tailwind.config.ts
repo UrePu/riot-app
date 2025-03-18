@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        header: " #202938",
+        layout: " #202938",
         loading: "#d1d5db",
       },
     },
