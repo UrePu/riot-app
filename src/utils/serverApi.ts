@@ -1,25 +1,26 @@
 "use server";
 
-export const fetchChampionList = async () => {
-  const version = await fetch(
+import { ChampionType } from "@/types/champion";
+
+export const fetchChampionList = async (): Promise<ChampionType[]> => {
+  const versionRes = await fetch(
     "https://ddragon.leagueoflegends.com/api/versions.json"
   );
-  const versionData: Array<string> = await version.json();
-  const response = await fetch(
-    `https://ddragon.leagueoflegends.com/cdn/${versionData[0]}/data/ko_KR/champion.json`,
+  const versions: string[] = await versionRes.json();
+  const currentVersion = versions[0];
+
+  const championRes = await fetch(
+    `https://ddragon.leagueoflegends.com/cdn/${currentVersion}/data/ko_KR/champion.json`,
     {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // CORS 정책을 우회하기 위한 코드
-      },
-      next: {
-        revalidate: 86400,
-      },
+      next: { revalidate: 86400 },
     }
   );
-  const data = await response.json();
-  return data;
+
+  const championData = await championRes.json();
+
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return Object.values(championData.data) as ChampionType[];
 };
 
 export const fetchChampion = async (id: string) => {
@@ -55,6 +56,7 @@ export const fetchItemList = async () => {
       },
     }
   );
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const data = await res.json();
   return data;
 };
