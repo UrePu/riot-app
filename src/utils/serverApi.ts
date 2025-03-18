@@ -18,8 +18,6 @@ export const fetchChampionList = async (): Promise<ChampionType[]> => {
 
   const championData = await championRes.json();
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
   return Object.values(championData.data) as ChampionType[];
 };
 
@@ -56,7 +54,7 @@ export const fetchItemList = async () => {
       },
     }
   );
-  await new Promise((resolve) => setTimeout(resolve, 2000));
   const data = await res.json();
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return data;
 };

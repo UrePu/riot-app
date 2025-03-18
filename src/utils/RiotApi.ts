@@ -2,6 +2,7 @@ export const getChampionRotation = async () => {
   const response = await fetch("/api/rotation");
   const data = await response.json();
 
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return data;
 };
 
