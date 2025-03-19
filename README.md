@@ -1,6 +1,6 @@
 이 프로젝트는 Riot Games API를 활용하여 챔피언 로테이션, 아이템 목록 등을 제공하는 Next.js 기반의 웹 애플리케이션입니다.
 
-링크[riot-app-rho.vercel.app]
+[사이트 링크](riot-app-rho.vercel.app)
 
 기술 스택
 
