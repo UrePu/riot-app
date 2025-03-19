@@ -1,44 +1,6 @@
 이 프로젝트는 Riot Games API를 활용하여 챔피언 로테이션, 아이템 목록 등을 제공하는 Next.js 기반의 웹 애플리케이션입니다.
+기능
 
-프로젝트 구조
-
-src/
-├── app/
-│   ├── api/
-│   │   ├── champion/
-│   │   │   ├── rotation/
-│   │   ├── champions/[id]/page.tsx
-│   │   ├── items/page.tsx
-│   │   ├── rotation/page.tsx
-│   │   ├── error.tsx
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── loading.tsx
-│   ├── page.tsx
-│   ├── providers.tsx
-│   ├── components/
-│   │   ├── Champion.tsx
-│   │   ├── Empty.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Header.tsx
-│   │   ├── Item.tsx
-│   ├── types/
-│   │   ├── ChampionRotation.ts
-│   │   ├── Items.ts
-│   │   ├── champion.ts
-│   ├── utils/
-│   │   ├── RiotApi.ts
-│   │   ├── serverApi.ts
-├── .eslintrc.json
-├── .gitignore
-├── README.md
-├── next.config.mjs
-├── package-lock.json
-├── package.json
-├── pnpm-lock.yaml
-├── postcss.config.mjs
-├── tailwind.config.ts
-├── tsconfig.json
 
 기술 스택
 
