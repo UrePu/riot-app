@@ -1,6 +1,4 @@
 이 프로젝트는 Riot Games API를 활용하여 챔피언 로테이션, 아이템 목록 등을 제공하는 Next.js 기반의 웹 애플리케이션입니다.
-기능
-
 
 기술 스택
 
@@ -10,7 +8,7 @@
 
 API 통신: Riot Games API
 
-상태 관리: React Context API
+상태 관리: Tanstack Query
 
 패키지 매니저: pnpm
 
